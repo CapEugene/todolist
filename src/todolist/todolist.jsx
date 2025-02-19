@@ -1,4 +1,6 @@
-
+import Navbar from '../navbar/navbar';
+import './todolist.css';
+import Task from '../task/task';
 
 function MainPage() {
 
@@ -6,7 +8,20 @@ function MainPage() {
 
     return (
         <>
-            <h1>Hello World!</h1>
+            <Navbar />
+            <div className='flex-container'>
+
+                <div className='task-create'>
+                    <div className='buttons'>
+                        <input></input>
+                        <button>Add new task</button>
+                    </div>
+                </div>
+
+                <div className='tasks-container'>
+
+                </div>
+            </div>
         </>
     );
 }

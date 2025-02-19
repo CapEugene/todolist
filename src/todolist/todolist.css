@@ -1,0 +1,15 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 67px;
+    min-height: 100vh;
+}
+
+.task-create {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.tasks-container {
+    display: flex;
+}
