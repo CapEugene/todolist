@@ -12,4 +12,5 @@
 
 .tasks-container {
     display: flex;
+    flex-direction: column;
 }
