@@ -10,12 +10,16 @@ function MainPage() {
     useEffect(() => {
         getTasks();
     }, []);
+
+    console.log(tasks);
     
     const getTasks = () => {
         const retrievedTasks = [];
         for (let i = 1; i <= localStorage.length; i++) {
             const retrievedTask = JSON.parse(localStorage.getItem(i));
-            retrievedTasks.push(retrievedTask.taskinfo);
+            if (retrievedTask) {
+                retrievedTasks.push(retrievedTask);
+            }
         }
         setTasks(retrievedTasks);
     };
@@ -33,7 +37,7 @@ function MainPage() {
             };
 
             localStorage.setItem(task.id, JSON.stringify(task));
-            setTasks([...tasks, input]);
+            setTasks([...tasks, task]);
             document.getElementById("input").value = '';
         }
     };
@@ -58,8 +62,11 @@ function MainPage() {
                 </div>
 
                 <ul className='tasks-container'>
-                    {tasks.map((task, index) => (
+                    {/* {tasks.map((task, index) => (
                         <li className='list-container' key={index}>{task}</li>
+                    ))} */}
+                    {tasks.map((task) => (
+                        <Task key={task.id} task={task} />
                     ))}
                 </ul>
             </div>

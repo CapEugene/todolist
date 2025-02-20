@@ -11,13 +11,15 @@ function Navbar() {
     }
 
     return (
-        <nav className='navbar'>
-            <h1>ToDoList</h1>
-            <div className='buttons'>
-                <button className='button' onClick={exit}>Exit</button>
-                <button className='button' onClick={profile}>Profile</button>
-            </div>
-        </nav>
+        <>
+            <nav className='navbar'>
+                <h1>ToDoList</h1>
+                <div className='buttons'>
+                    <button className='button' onClick={exit}>Exit</button>
+                    <button className='button' onClick={profile}>Profile</button>
+                </div>
+            </nav>
+        </>
     );
 }
 

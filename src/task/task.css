@@ -1,0 +1,22 @@
+.task-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    border-style: solid;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.tasktitle-style {
+    display: flex;
+    justify-content: center;
+}
+
+.taskinfotitle-style {
+    padding-left: 10px;
+}
+
+.taskinfo-style {
+
+}
