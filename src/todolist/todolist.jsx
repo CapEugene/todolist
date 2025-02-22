@@ -15,8 +15,9 @@ function MainPage() {
     
     const getTasks = () => {
         const retrievedTasks = [];
-        for (let i = 1; i <= localStorage.length; i++) {
-            const retrievedTask = JSON.parse(localStorage.getItem(i));
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            const retrievedTask = JSON.parse(localStorage.getItem(key));
             if (retrievedTask) {
                 retrievedTasks.push(retrievedTask);
             }
@@ -34,6 +35,7 @@ function MainPage() {
             const task = {
                 id: localStorage.length + 1,
                 taskinfo: input,
+                isCompleted: false
             };
 
             localStorage.setItem(task.id, JSON.stringify(task));
@@ -43,6 +45,11 @@ function MainPage() {
     };
 
     const clearLocalStorage = () => {
+        if (localStorage.length == 0) {
+            alert("LocalStorage пуст!");
+            return;
+        }
+
         localStorage.clear();
         getTasks();
         alert("Выполнено!");
@@ -56,8 +63,8 @@ function MainPage() {
                 <div className='task-create'>
                     <div className='buttons'>
                         <input id="input"></input>
-                        <button onClick={addTask}>Add new task</button>
-                        <button onClick={clearLocalStorage}>Clear localStorage</button>
+                        <button className='button' onClick={addTask}>Add new task</button>
+                        <button className='button' onClick={clearLocalStorage}>Clear localStorage</button>
                     </div>
                 </div>
 
