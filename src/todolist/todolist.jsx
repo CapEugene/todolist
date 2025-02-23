@@ -19,10 +19,13 @@ function MainPage() {
             const key = localStorage.key(i);
             const retrievedTask = JSON.parse(localStorage.getItem(key));
             if (retrievedTask) {
+                if (retrievedTask.id != (i + 1)) {
+                    retrievedTask.id = i + 1;
+                }
                 retrievedTasks.push(retrievedTask);
             }
         }
-        setTasks(retrievedTasks);
+        sortTasks(retrievedTasks);
     };
 
     const addTask = () => {
@@ -53,6 +56,11 @@ function MainPage() {
         localStorage.clear();
         getTasks();
         alert("Выполнено!");
+    };
+
+    const sortTasks = (retrievedTasks) => {
+        retrievedTasks.sort((a, b) => a.id - b.id);
+        setTasks(retrievedTasks);
     };
 
     return (

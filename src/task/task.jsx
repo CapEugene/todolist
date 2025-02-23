@@ -33,7 +33,7 @@ function Task({ task }) {
         <>
             {isReal ?
             <div className="task-container">
-                <h1 className='tasktitle-style'>Задача</h1>
+                <h1 className='tasktitle-style'>Задача №{task.id}</h1>
                 <h2 className='taskinfotitle-style'>Описание задачи:</h2>
                 <p className='taskinfo-style'>{task.taskinfo}</p>
                 <div className='task-buttons'>

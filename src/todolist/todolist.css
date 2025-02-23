@@ -23,12 +23,13 @@
     gap: 30px;
 }
 
-.button{
+
+.task-create .buttons button {
     width: 100px;
     height: 50px;
     border-radius: 7px;
 }
 
-.button:hover {
+.task-create .buttons button:hover {
     background-color: lightgray;
 }
